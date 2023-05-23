@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamowienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body onload="braki()">
+    <section class="baner">
+        <h1>Sieci komputerowe</h1>
+    </section>
+    <section class="lewy">
+        <h2>Aktualizacja i zamówienia materiałów</h2>
+        <p>Do wewnętrznego użytku firmy</p>
+        <img src="obraz.png" alt="sieć komputerowa">
+    </section>
+    <section class="prawy">
+        <table id="table">
+            <thead>
+                <th>Produkt</th>
+                <th>Jednostka</th>
+                <th>Dostępna ilość</th>
+                <th>Aktualizacja</th>
+                <th>Zamówienie</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Skrętka U/UTP drut</td>
+                    <td>metr</td>
+                    <td>0</td>
+                    <td><input type="button" value="Aktualizuj" onclick="aktualizacja1()"></td>
+                    <td><input type="button" value="Zamów" onclick="zamowienie1()"></td>
+                </tr>
+                <tr>
+                    <td>Skrętka U/UTP linka</td>
+                    <td>metr</td>
+                    <td>2</td>
+                    <td><input type="button" value="Aktualizuj" onclick="aktualizacja2()"></td>
+                    <td><input type="button" value="Zamów" onclick="zamowienie2()"></td>
+                </tr>
+                <tr>
+                    <td>Wtyki 8P8C</td>
+                    <td>sztuki</td>
+                    <td>0</td>
+                    <td><input type="button" value="Aktualizuj" onclick="aktualizacja3()"></td>
+                    <td><input type="button" value="Zamów" onclick="zamowienie3()"></td>
+                </tr>
+                <tr>
+                    <td>Moduły Keystone</td>
+                    <td>sztuki</td>
+                    <td>4</td>
+                    <td><input type="button" value="Aktualizuj" onclick="aktualizacja4()"></td>
+                    <td><input type="button" value="Zamów" onclick="zamowienie4()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="stopka">
+        <a href="http://sieci.pl/" target="_blank">Nasza strona internetowa</a>
+        <p>Strone przygotował Kamil</p>
+    </section>
+    <script>
+        function braki(){
+            const tabela=document.getElementById("table");
+            if(tabela.rows[1].cells[2].innerText==0){
+                tabela.rows[1].cells[2].style.background="red";
+            }
+            if(tabela.rows[2].cells[2].innerText==0){
+                tabela.rows[2].cells[2].style.background="red";
+            }
+            if(tabela.rows[3].cells[2].innerText==0){
+                tabela.rows[3].cells[2].style.background="red";
+            }
+            if(tabela.rows[4].cells[2].innerText==0){
+                tabela.rows[4].cells[2].style.background="red";
+            }
+            if(tabela.rows[1].cells[2].innerText>0&& tabela.rows[1].cells[2].innerText<=5){
+                tabela.rows[1].cells[2].style.background="yellow";
+            }
+            if(tabela.rows[2].cells[2].innerText>0&& tabela.rows[2].cells[2].innerText<=5){
+                tabela.rows[2].cells[2].style.background="yellow";
+            }
+            if(tabela.rows[3].cells[2].innerText>0&& tabela.rows[3].cells[2].innerText<=5){
+                tabela.rows[3].cells[2].style.background="yellow";
+            }
+            if(tabela.rows[4].cells[2].innerText>0&& tabela.rows[4].cells[2].innerText<=5){
+                tabela.rows[4].cells[2].style.background="yellow";
+            }
+
+        }
+        function aktualizacja1(){
+            ilosc=prompt("Podaj nową ilosć");
+        }
+    </script>
+</body>
+</html>
